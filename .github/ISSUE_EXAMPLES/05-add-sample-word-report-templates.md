@@ -7,9 +7,9 @@
 ## 対象
 
 - `examples/`
-- `.agents/skills/hospital-document-drafter/assets/`
-- `.agents/skills/hospital-template-document-builder/assets/`
-- `.agents/skills/hospital-manual-builder/assets/`
+- `skills/hospital-document-drafter/assets/`
+- `skills/hospital-template-document-builder/assets/`
+- `skills/hospital-manual-builder/assets/`
 
 ## 追加したい内容
 
@@ -28,4 +28,3 @@
 - 少なくとも 3 種類の Word 報告書テンプレート案が追加されている。
 - 対応する Skill と使い方が明記されている。
 - 提出前の確認項目が含まれている。
-

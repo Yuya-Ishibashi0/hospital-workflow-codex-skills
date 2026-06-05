@@ -6,8 +6,8 @@
 
 ## 対象
 
-- `.agents/skills/*/SKILL.md`
-- `.agents/skills/*/examples/`
+- `skills/*/SKILL.md`
+- `skills/*/examples/`
 - `docs/safety-guidelines.md`
 - `harness/cases/`
 
@@ -15,7 +15,7 @@
 
 - 9 Skill それぞれに、少なくとも 2 件の NG 依頼例を追加する。
 - NG 理由と、安全な言い換え例を添える。
-- harness case に危険な依頼の判定例を追加する。
+- eval case に危険な依頼の判定例を追加する。
 
 ## 安全上の制約
 
@@ -27,5 +27,4 @@
 
 - 9 Skill すべてに NG 例が追加されている。
 - `docs/safety-guidelines.md` と矛盾しない。
-- 少なくとも 2 件の harness case で NG 判定の観点が増えている。
-
+- 少なくとも 2 件の eval case で NG 判定の観点が増えている。

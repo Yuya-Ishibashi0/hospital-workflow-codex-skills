@@ -73,7 +73,6 @@
 - 推奨Skill: `automation-planning-consultant`
 - 補助Skill: `admin-workflow-consultant`
 - 入力例: 依頼種別、受付経路、件数
-- 出力例: 改善手段、PoC案、相談文
+- 出力例: 改善手段、小さく試す案、相談文
 - 注意点: 権限、個人情報、システム変更は確認。
 - 対象外: 患者情報を含む依頼処理
-

@@ -1,30 +1,31 @@
-# Codex plugin 化の設計メモを作成する
+# Codex plugin の配布・更新フローを整備する
 
 ## 背景
 
-README と installation guide では将来的な plugin 化に触れている。現時点では plugin 化しないが、配布方法、Skill 更新、利用者導線、安全レビューの観点を整理しておくと今後の判断がしやすい。
+`.codex-plugin/plugin.json`、plugin 用 `skills/`、user-level installer は実装済みです。次の段階として、GitHub から安全に導入・更新できる marketplace 配布とリリース手順を整える必要があります。
 
 ## 対象
 
-- `docs/roadmap.md`
+- `.codex-plugin/plugin.json`
+- `tools/install_user_harness.py`
 - `docs/installation.md`
-- 新規設計メモ `docs/codex-plugin-design.md` など
+- リリース手順と marketplace 用メタデータ
 
 ## 追加したい内容
 
-- plugin 化した場合のメリット、懸念、対象外を整理する。
-- Skill 更新フロー、バージョン管理、レビュー観点を整理する。
-- 初期版では repo-local / user-level Skill に留める理由を明記する。
+- Codex marketplace での配布方法を検証する。
+- バージョン更新、互換性、ロールバック手順を文書化する。
+- plugin manifest と Skill bundle のリリース前検証を自動化する。
+- user-level installer との使い分けを明確にする。
 
 ## 安全上の制約
 
-- plugin 化により患者情報や電子カルテ連携を扱う方向へ広げない。
-- 院内導入時は組織のルール確認が必要であることを明記する。
-- 自動更新や外部連携を前提にしない。
+- plugin 配布によって患者情報や電子カルテ連携を扱う方向へ広げない。
+- 同名 Skill を無断で上書きしない。
+- 更新失敗時に旧版へ戻せること。
 
 ## 完了条件
 
-- plugin 化の設計メモが追加されている。
-- `docs/installation.md` または `docs/roadmap.md` から参照されている。
-- 初期版では plugin 化しない理由が明確になっている。
-
+- marketplace または同等の配布経路で導入検証が完了している。
+- 更新とロールバックの手順が再現できる。
+- `python3 tools/harness_doctor.py` がリリース前チェックに含まれる。

@@ -1,0 +1,23 @@
+name: Validate harness
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check generated mirrors
+        run: |
+          python3 tools/sync_harness_bundle.py --check
+          python3 tools/sync_repo_skills.py --check
+      - name: Run release gates
+        run: python3 tools/release_check.py

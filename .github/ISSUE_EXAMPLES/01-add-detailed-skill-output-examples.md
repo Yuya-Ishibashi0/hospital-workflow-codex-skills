@@ -6,7 +6,7 @@
 
 ## 対象
 
-- `.agents/skills/*/examples/README.md`
+- `skills/*/examples/README.md`
 - `examples/`
 - 必要に応じて `harness/cases/`
 
@@ -26,5 +26,4 @@
 
 - 9 Skill すべてに詳細なサンプル出力がある。
 - サンプル出力が各 Skill の `Output format` と矛盾しない。
-- 必要に応じて harness case から参照できる。
-
+- 必要に応じて eval case から参照できる。

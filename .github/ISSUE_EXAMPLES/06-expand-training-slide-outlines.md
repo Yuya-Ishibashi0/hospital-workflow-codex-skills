@@ -7,8 +7,8 @@
 ## 対象
 
 - `examples/`
-- `.agents/skills/training-program-designer/examples/`
-- `.agents/skills/hospital-visual-material-designer/examples/`
+- `skills/training-program-designer/examples/`
+- `skills/hospital-visual-material-designer/examples/`
 - `use-cases/education.md`
 
 ## 追加したい内容
@@ -28,4 +28,3 @@
 - 少なくとも 5 種類の研修スライド構成例が追加されている。
 - 対応する Skill が明記されている。
 - 研修後アンケートや事後フォロー案まで含まれている。
-

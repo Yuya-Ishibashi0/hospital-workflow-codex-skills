@@ -7,8 +7,8 @@
 ## 対象
 
 - `examples/`
-- `.agents/skills/hospital-template-document-builder/assets/`
-- `.agents/skills/survey-insight-analyst/assets/`
+- `skills/hospital-template-document-builder/assets/`
+- `skills/survey-insight-analyst/assets/`
 - 必要に応じて `docs/`
 
 ## 追加したい内容
@@ -28,4 +28,3 @@
 - 少なくとも 3 種類の Excel テンプレート案が追加されている。
 - `hospital-template-document-builder` から使い方が分かる。
 - 空欄、不足情報、元資料との対応関係の扱いが明記されている。
-

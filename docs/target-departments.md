@@ -10,4 +10,3 @@
 | 教育研修担当 | 研修企画、年間教育計画、研修報告、AI リテラシー研修 | `training-program-designer`, `survey-insight-analyst`, `hospital-template-document-builder` |
 | 地域連携室 | 連携先リスト、会議整理、案内文、説明会企画、FAQ | `meeting-action-organizer`, `hospital-document-drafter`, `hospital-template-document-builder` |
 | 共通部門 | 二重入力削減、会議整理、既存様式整理、マニュアル作成 | すべての Skill |
-

@@ -1,0 +1,41 @@
+{
+  "name": "hospital-workflow-codex-skills",
+  "version": "0.2.0",
+  "description": "A lightweight Codex orchestration harness for safe, repeatable non-clinical workflow improvement in Japanese hospitals.",
+  "author": {
+    "name": "Yuya Ishibashi",
+    "url": "https://github.com/Yuya-Ishibashi0"
+  },
+  "homepage": "https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills",
+  "repository": "https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "hospital",
+    "workflow",
+    "non-clinical",
+    "documentation",
+    "japanese"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Hospital Workflow Harness",
+    "shortDescription": "病院の非診療業務改善を安全に進める",
+    "longDescription": "病院の非診療領域における業務整理、文書作成、既存様式整理、会議整理、マニュアル、研修、アンケート分析を、安全境界、タスクルーティング、成果物契約、人間確認ルールに沿って実行するCodex向け軽量ハーネスです。",
+    "developerName": "Yuya Ishibashi",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills",
+    "defaultPrompt": [
+      "非診療業務の課題を整理し、適切な成果物ファイルを作成して",
+      "会議メモから議事録とアクション一覧を作成して",
+      "部署内マニュアルをWord形式で作成して"
+    ],
+    "brandColor": "#247A67",
+    "logo": "./assets/hwcs-logo.png",
+    "screenshots": []
+  }
+}
