@@ -53,6 +53,61 @@ Example:
 Use the $hospital-template-document-builder skill to organize this training survey summary into a hospital report template.
 ```
 
+## Quick Usage Examples
+
+### 1. 院内お知らせ文を作る
+
+```text
+Use the $hospital-document-drafter skill.
+
+以下の内容を、職員向けの院内お知らせ文にしてください。
+
+- テーマ: 研修アンケート回答のお願い
+- 対象: 全職員
+- 締切: 6月30日
+- 注意: 患者情報や個別事例は入力しない
+```
+
+Expected output:
+
+- 件名案
+- 本文案
+- 掲示・メール配信用の短縮版
+- 人間が確認すべき項目
+
+### 2. 既存様式への転記ルールを整理する
+
+```text
+Use the $hospital-template-document-builder skill.
+
+研修メモを、既存の研修報告書フォーマットに整理してください。
+不明な項目は補完せず、空欄または不足情報として示してください。
+```
+
+Expected output:
+
+- テンプレート項目ごとの対応表
+- 抽出できた情報
+- 不足情報リスト
+- 転記前に確認すべき項目
+
+### 3. 研修アンケートの自由記述を分析する
+
+```text
+Use the $survey-insight-analyst skill.
+
+以下の匿名化済み自由記述を、ポジティブ意見、改善要望、次回テーマ案に分類してください。
+患者情報や個別事例は含めていません。
+```
+
+Expected output:
+
+- 全体傾向
+- 自由記述の分類
+- 次回研修への示唆
+- 報告書ドラフト
+- 人間が確認すべき解釈
+
 ### User-level Codex Skills
 
 ```bash
@@ -91,6 +146,7 @@ cp -R .agents/skills/* ~/.agents/skills/
 
 ```bash
 python3 harness/scripts/validate_skill_metadata.py
+python3 harness/scripts/validate_skill_sections.py
 python3 harness/scripts/generate_skill_index.py
 ```
 

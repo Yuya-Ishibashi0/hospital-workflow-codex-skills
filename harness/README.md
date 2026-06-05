@@ -21,10 +21,12 @@
 
 ```bash
 python3 harness/scripts/validate_skill_metadata.py
+python3 harness/scripts/validate_skill_sections.py
 python3 harness/scripts/generate_skill_index.py
 ```
+
+`validate_skill_sections.py` は、各 `SKILL.md` に Purpose、When to use、When not to use、Inputs、Process、Output format、Safety constraints、Examples、Escalation / human review notes が含まれているかを確認します。
 
 ## 将来の自動評価方針
 
 将来的に `codex exec --json` を使い、ケース入力、期待出力、ルーブリックをもとに自動評価できる形へ拡張します。初期版では手動評価と軽量なメタデータ検証を中心にします。
-
