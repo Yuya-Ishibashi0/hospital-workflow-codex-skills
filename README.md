@@ -3,263 +3,155 @@
 </p>
 
 <p align="center">
-  <strong>病院の非診療業務改善タスクに Codex を適用するための軽量エージェントハーネス</strong>
+  <strong>病院の非診療業務を、Codexと安全に整理・文書化するための業務支援パッケージ</strong>
 </p>
 
 <p align="center">
   日本語 | <a href="README.en.md">English</a>
 </p>
 
-<p align="center">
-  <strong>v0.2.0 development</strong>
-  ·
-  <a href="LICENSE">MIT License</a>
-  ·
-  <a href="harness/README.md">Harness</a>
-  ·
-  <a href="docs/safety-guidelines.md">安全方針</a>
-</p>
-
 # Hospital Workflow Codex Skills
 
-このリポジトリは、病院の非診療領域における業務改善タスクを支援するための、**Codex 向け軽量エージェントハーネス**です。
+病院で発生する事務、運用、教育、文書作成などの業務を、Codexで整理・改善するためのハーネスです。Codexが安全に作業するためのルール、進め方、ひな形がひとまとめになっています。
 
-単なる Skill 集ではなく、`AGENTS.md`、Codex Skills、業務テンプレート、タスクルーティング、安全境界、出力契約、保守ツールを組み合わせ、Codex が安全・再現性高く・目的通りに作業できるようにするための運用パッケージです。
+やりたいことを日本語で伝えるだけで、目的に合った進め方を選び、マニュアル、Excel表、会議整理、研修資料などを**実際のファイルとして作成**します。
 
-## このリポジトリでいうハーネス
+## こんなときに使えます
 
-ここでのハーネスとは、Codex を病院業務改善タスクに適用するための **実行制御レイヤー** です。
+- 部署内のマニュアルや手順書を作りたい
+- 会議メモから決定事項や担当者を整理したい
+- Excelへの二重入力や転記作業を見直したい
+- 院内のお知らせ、依頼文、報告書を作りたい
+- 研修資料やPowerPointを作りたい
+- アンケート結果を集計して改善点を整理したい
+- 既存のExcel、Word、PowerPoint様式に情報をまとめたい
 
-このリポジトリは Codex 専用です。Claude Code / OpenCode など、他のエージェントランタイムへの対応は初期版の対象外です。
+## クイックスタート
 
-Codex に対して、以下をまとめて提供します。
+### 1. このリポジトリをダウンロードする
 
-- 作業前提
-- 対象範囲
-- 安全境界
-- タスク分類
-- Skill 選択
-- 成果物テンプレート
-- ファイル形式
-- 人間確認ポイント
-- 保守ツール
+[こちらからZIPファイルをダウンロード](https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills/archive/refs/heads/main.zip)し、ダウンロードしたファイルを展開します。
 
-## 対象範囲
+すでにこのフォルダを手元に用意している場合は、この手順は不要です。
 
-対象は、病院・医療機関における非診療領域の業務改善です。
+### 2. Codexアプリでフォルダを開く
 
-- 二重入力・多重入力の整理
-- 紙・Excel・Word への転記作業の削減
-- 既存 Excel / Word / PowerPoint / 院内様式への情報整理
-- 会議内容の整理
-- 部門別マニュアル作成
-- 院内文書、報告書、依頼文、FAQ の作成
-- 研修資料、掲示物、スライド構成、図解案の作成
-- 研修アンケート、職員アンケートの分析
-- 自動化・省力化の検討
+Codexアプリを起動し、展開した `hospital-workflow-codex-skills` フォルダを開きます。
 
-## 対象外
+### 3. やりたいことを日本語で依頼する
 
-- 診療判断
-- 医療上の助言
-- 患者情報の処理
-- 電子カルテ内容の分析
-- 診断、治療方針、投薬判断
-- 医療安全上の最終判断
-- 個人情報を含む実データの無断利用
-
-## 構成
-
-```text
-hospital-workflow-codex-skills/
-  .codex-plugin/plugin.json
-  AGENTS.md
-  .agents/skills/
-  skills/
-  harness/
-  templates/
-  use-cases/
-  tools/
-  evals/
-  examples/
-```
-
-| Directory | Role |
-| --- | --- |
-| `.codex-plugin/` | Codex plugin として配布するための manifest |
-| `AGENTS.md` | Codex がこのリポジトリで守る上位ルール |
-| `.agents/skills/` | repo-local 利用向けの Codex Skills |
-| `skills/` | plugin 配布向けのオーケストレーターと専門 Skills |
-| `harness/` | Codex の実行制御レイヤー |
-| `templates/` | 提案書、議事録、業務フロー、既存様式整理などの成果物テンプレート |
-| `use-cases/` | 代表的な業務改善シナリオ |
-| `tools/` | Skill メタデータ検証、索引生成などの保守ツール |
-| `evals/` | 将来の評価ケース、ルーブリック、回帰テスト |
-| `examples/` | 利用例、サンプル成果物 |
-| `outputs/` | Codex が生成した作業成果物の既定保存先 |
-
-## Harness
-
-`harness/` はこのリポジトリの中心です。
-
-- [Operating model](harness/operating-model.md)
-- [Task routing](harness/task-routing.md)
-- [Safety boundaries](harness/safety-boundaries.md)
-- [Output contracts](harness/output-contracts.md)
-- [Artifact output policy](harness/artifact-output-policy.md)
-- [Human review policy](harness/human-review-policy.md)
-- [Workflow modes](harness/workflow-modes.md)
-
-## 成果物の出力方針
-
-このハーネスでは、Skill の成果物をチャット欄に長文で貼り付けるのではなく、原則としてファイルで作成します。
-
-標準の保存先は `outputs/` です。
-
-| 内容 | 標準形式 |
-| --- | --- |
-| マニュアル、報告書、依頼文、議事録 | `.docx` または `.md` |
-| 対応表、チェックリスト、アンケート集計 | `.xlsx` または `.csv` |
-| 研修資料、掲示物、スライド構成 | `.pptx` または `.md` |
-
-チャットで返すのは、作成したファイル名、保存場所、確認ポイントの短い要約だけです。詳細は [Artifact output policy](harness/artifact-output-policy.md) を参照してください。
-
-## 利用する主な Codex Skills
-
-通常は `$hospital-workflow-harness` を入口として使います。このオーケストレーターが安全確認、作業モード選択、専門 Skill 選択、成果物ファイルの決定、人間確認までを統括します。
-
-専門 Skill を明示的に使うこともできます。
-
-| Skill | Role |
-| --- | --- |
-| `admin-workflow-consultant` | 二重入力、転記、紙運用、Excel 管理などの非診療業務フローを整理する |
-| `automation-planning-consultant` | Excel、フォーム、CSV、共有フォルダ、既存システム設定などの省力化案を整理する |
-| `hospital-template-document-builder` | メモ、CSV、アンケート結果を既存様式に沿って整理する |
-| `meeting-action-organizer` | 非診療会議メモから決定事項、未決事項、担当、期限を整理する |
-| `hospital-manual-builder` | 部門別マニュアル、手順書、FAQ、チェックリストを作成する |
-| `hospital-document-drafter` | 院内向けの依頼文、報告文、周知文、相談文を作成する |
-| `training-program-designer` | 研修、勉強会、AI リテラシー研修の構成を作成する |
-| `hospital-visual-material-designer` | 掲示物、スライド、図解、画像生成プロンプトの構成を作成する |
-| `survey-insight-analyst` | 研修アンケート、職員アンケート、自由記述を分析する |
-
-新しい Skill を追加する場合は、まず `harness/task-routing.md`、`templates/`、`use-cases/` に反映し、既存 Skill の組み合わせでは扱えない独立した仕事かを確認します。
-
-## Templates
-
-`templates/` には、Codex の出力を安定させるための型を置きます。
-
-- [業務ヒアリングシート](templates/workflow-hearing-sheet.md)
-- [業務フロー整理](templates/workflow-map.md)
-- [既存様式への情報整理](templates/template-document-mapping.md)
-- [アンケート整理レポート](templates/survey-summary-report.md)
-- [改善提案書](templates/proposal-outline.md)
-- [会議整理](templates/meeting-minutes.md)
-- [部門別マニュアル](templates/department-manual.md)
-- [運用設計書](templates/operation-design.md)
-
-## Use Cases
-
-代表的な業務改善シナリオは [use-cases/](use-cases/) に置いています。
-
-- [会議メモから TODO と論点を整理する](use-cases/meeting-to-actions.md)
-- [部門別マニュアルを作る](use-cases/department-manual.md)
-- [既存様式に情報を整理する](use-cases/template-document-organization.md)
-- [研修アンケートを分析する](use-cases/training-survey-analysis.md)
-
-## スクリーンショット掲載予定
-
-このリポジトリでは、利用例を実画面のスクリーンショットで説明することを重視します。
-
-掲載する画像は、実際に Codex / Computer Use で操作した画面に限定します。合成した説明画像や、実画面と異なるモック画像は使いません。
-
-置き場:
-
-```text
-docs/assets/screenshots/
-```
-
-## 使い方
-
-### Repo-local harness
-
-最も簡単で安定した使い方です。
-
-```bash
-git clone https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills.git
-cd hospital-workflow-codex-skills
-codex
-```
-
-Codex を起動したら、次のように依頼します。
+チャット欄に、次のように入力してください。
 
 ```text
 $hospital-workflow-harness
-部署内の物品管理手順を整理し、新人向けマニュアルとチェックリストを作成してください。
+部署内の物品管理手順を整理して、新人向けマニュアルとチェックリストを作成してください。
 ```
 
-Codex は `AGENTS.md`、harness、Skill、template を参照し、成果物を `outputs/` に保存します。
+依頼文には、分かる範囲で次の内容を含めると、より使いやすい成果物になります。
 
-### User-level harness
+- 何を作りたいか
+- 誰が使うか
+- 現在困っていること
+- 参考にしてほしいファイル
+- Word、Excel、PowerPointなど希望する形式
 
-他のリポジトリからも使う場合:
+すべて決まっていなくても問題ありません。不明な点はCodexが確認し、勝手に情報を補わずに整理します。
 
-```bash
-python3 tools/install_user_harness.py --dry-run
-python3 tools/install_user_harness.py
+### 4. 作成されたファイルを確認する
+
+成果物は原則として `outputs` フォルダに保存されます。
+
+Codexのチャット欄には、作成したファイル、保存場所、確認が必要な点だけが短く表示されます。完成したマニュアルや表を、長いチャットからコピーし直す必要はありません。
+
+## 依頼例
+
+### マニュアルを作る
+
+```text
+$hospital-workflow-harness
+新人職員向けの備品補充マニュアルをWordで作成してください。
+対象者は配属1か月以内の職員です。
+元になるメモを添付します。不明な部分は推測せず、確認事項として残してください。
 ```
 
-導入後に Codex を再起動してください。`$hospital-workflow-harness` と専門 Skill がユーザー Skill として利用できるようになります。
+### 会議内容を整理する
 
-同名 Skill がある場合は安全のため停止します。確認後に置き換える場合は `--force`、削除する場合は `--uninstall` を使います。置き換え前の内容は `~/.codex/backups/` に退避されます。
-
-### Harness doctor
-
-```bash
-python3 tools/harness_doctor.py
+```text
+$hospital-workflow-harness
+添付した会議メモから、決定事項、未決事項、担当者、期限を整理してください。
+共有用の議事録をWordで作成してください。
 ```
 
-plugin manifest、オーケストレーター、専門 Skill、harness 文書、templates の不足を確認します。
+### アンケートを分析する
 
-### Plugin package
-
-このリポジトリには `.codex-plugin/plugin.json` と `skills/` が含まれ、Codex plugin としてパッケージできる構成になっています。
-
-現在の確実な導入経路は repo-local harness と user-level installer です。Codex marketplace からの配布は今後のリリース工程として整備します。
-
-## 保守ツール
-
-`tools/` はハーネス本体ではなく、リポジトリを保守するための補助ツールです。
-
-```bash
-python3 tools/validate_skill_metadata.py
-python3 tools/validate_skill_sections.py
-python3 tools/generate_skill_index.py
+```text
+$hospital-workflow-harness
+添付した研修アンケートを集計し、全体傾向と改善要望を整理してください。
+集計結果はExcel、報告書はWordで作成してください。
 ```
 
-リリース前の一括確認:
+### 業務改善案を作る
 
-```bash
-python3 tools/release_check.py
+```text
+$hospital-workflow-harness
+部署内で同じ情報を紙とExcelに二重入力しています。
+現在の流れを整理し、低リスクで始められる改善案を提案書にしてください。
 ```
 
-詳細は [Release checklist](docs/release-checklist.md) を参照してください。
+### 既存様式に整理する
 
-## Evals
+```text
+$hospital-workflow-harness
+添付したメモの内容を、指定のExcel様式に整理してください。
+不明な項目は空欄のままにし、確認が必要な項目を別にまとめてください。
+```
 
-`evals/` は、将来の評価ケースやルーブリックを置く場所です。
+## 作成できるもの
 
-- `harness/` = Codex をどう動かすかを定義する制御層
-- `evals/` = Codex の出力をどう評価するかを扱う場所
-- `tools/` = リポジトリ保守用スクリプト
+| やりたいこと | 主な成果物 |
+| --- | --- |
+| マニュアル・手順書作成 | Word、チェックリスト |
+| 会議内容の整理 | Word議事録、アクション一覧 |
+| 業務改善の検討 | Word提案書、業務フロー |
+| 院内文書の作成 | Word文書 |
+| アンケート分析 | Excel集計表、Word報告書 |
+| 研修・掲示物の作成 | PowerPoint、Word |
+| 既存様式への情報整理 | Excel、Word、PowerPoint |
 
-## 安全方針
+希望する形式がある場合は、依頼時に「Wordで」「Excelで」「PowerPointで」と伝えてください。
 
-このハーネスでは、患者情報、電子カルテ内容、診療判断、患者説明文、診療記録、申し送り文を扱いません。
+## 安全に使うために
 
-Codex の出力は、業務改善や文書化のたたき台です。運用変更、配布、掲示、外部送付、システム設定変更の前に、人間が確認してください。
+このハーネスは、病院の**非診療業務**を対象としています。
 
-詳しくは [harness/safety-boundaries.md](harness/safety-boundaries.md) と [harness/human-review-policy.md](harness/human-review-policy.md) を参照してください。
+次の内容には使用しないでください。
 
-## License
+- 患者の氏名、ID、病歴などの個人情報
+- 電子カルテの内容
+- 診断、治療方針、投薬などの医療判断
+- 患者向け説明文
+- 診療記録や申し送り文
+
+作成された成果物はすべてたたき台です。院内で使用、配布、掲示する前に、担当者が内容と院内ルールを確認してください。
+
+詳しくは[安全方針](docs/safety-guidelines.md)をご覧ください。
+
+## このハーネスの特徴
+
+- 依頼内容に合った進め方を自動で選びます
+- 不明な情報を勝手に補完せず、確認事項として残します
+- 成果物をチャットではなくWord、Excel、PowerPointなどのファイルで作ります
+- 患者情報や診療判断を扱わないための安全ルールを備えています
+- 最後に人が確認すべき点を明示します
+
+## 詳しい資料
+
+- [対象部門と利用例](docs/target-departments.md)
+- [安全方針](docs/safety-guidelines.md)
+- [利用シナリオ](use-cases/)
+
+開発や改善に参加する方は、[Contribution Guide](docs/contribution-guide.md)をご覧ください。
+
+## ライセンス
 
 [MIT License](LICENSE)
