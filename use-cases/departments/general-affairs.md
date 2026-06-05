@@ -1,4 +1,4 @@
-# General Affairs Use Cases
+# 総務課のユースケース一覧
 
 ## 院内通知文作成
 

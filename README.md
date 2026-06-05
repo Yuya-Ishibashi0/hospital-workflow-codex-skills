@@ -19,12 +19,13 @@
 ## こんなときに使えます
 
 - 部署内のマニュアルや手順書を作りたい
-- 会議メモから決定事項や担当者を整理したい
-- Excelへの二重入力や転記作業を見直したい
+- 対面会議のメモや録音から議事録と担当表を作りたい
+- メール、紙、口頭に分散した依頼受付を整理したい
 - 院内のお知らせ、依頼文、報告書を作りたい
 - 研修資料やPowerPointを作りたい
 - アンケート結果を集計して改善点を整理したい
 - 既存のExcel、Word、PowerPoint様式に情報をまとめたい
+- 費用を抑え、今の業務に無理なく取り入れられる改善や自動化を考えたい
 
 ## クイックスタート
 
@@ -48,12 +49,13 @@ Codexから案内された `hospital-workflow-codex-skills` フォルダを、Co
 
 ### 3. やりたいことを依頼する
 
-チャット欄に、次のように入力してください。
+Skill名や特別な記号を探す必要はありません。チャット欄に、やりたいことをそのまま日本語で入力してください。
 
 ```text
-$hospital-workflow-harness
 部署内の物品管理手順を整理して、新人向けマニュアルとチェックリストを作成してください。
 ```
+
+このフォルダを開いている間は、Codexが依頼内容に合った進め方を自動で選びます。
 
 依頼文には、分かる範囲で次の内容を含めると、より使いやすい成果物になります。
 
@@ -86,7 +88,6 @@ git clone https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills.git
 ### マニュアルを作る
 
 ```text
-$hospital-workflow-harness
 新人職員向けの備品補充マニュアルをWordで作成してください。
 対象者は配属1か月以内の職員です。
 元になるメモを添付します。不明な部分は推測せず、確認事項として残してください。
@@ -95,7 +96,6 @@ $hospital-workflow-harness
 ### 会議内容を整理する
 
 ```text
-$hospital-workflow-harness
 添付した会議メモから、決定事項、未決事項、担当者、期限を整理してください。
 共有用の議事録をWordで作成してください。
 ```
@@ -103,7 +103,6 @@ $hospital-workflow-harness
 ### アンケートを分析する
 
 ```text
-$hospital-workflow-harness
 添付した研修アンケートを集計し、全体傾向と改善要望を整理してください。
 集計結果はExcel、報告書はWordで作成してください。
 ```
@@ -111,7 +110,6 @@ $hospital-workflow-harness
 ### 業務改善案を作る
 
 ```text
-$hospital-workflow-harness
 部署内で同じ情報を紙とExcelに二重入力しています。
 現在の流れを整理し、低リスクで始められる改善案を提案書にしてください。
 ```
@@ -119,7 +117,6 @@ $hospital-workflow-harness
 ### 既存様式に整理する
 
 ```text
-$hospital-workflow-harness
 添付したメモの内容を、指定のExcel様式に整理してください。
 不明な項目は空欄のままにし、確認が必要な項目を別にまとめてください。
 ```
@@ -166,7 +163,7 @@ $hospital-workflow-harness
 
 - [対象部門と利用例](docs/target-departments.md)
 - [安全方針](docs/safety-guidelines.md)
-- [利用シナリオ](use-cases/)
+- [最初の依頼から成果物まで分かる利用シナリオ](use-cases/)
 
 開発や改善に参加する方は、[Contribution Guide](docs/contribution-guide.md)をご覧ください。
 

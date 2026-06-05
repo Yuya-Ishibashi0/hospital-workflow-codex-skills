@@ -1,4 +1,4 @@
-# Medical Office Use Cases
+# 医事課のユースケース一覧
 
 ## 受付・窓口業務改善
 

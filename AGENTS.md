@@ -41,7 +41,10 @@ The harness exists so Codex can support hospital workflow improvement tasks safe
 
 ## Harness execution rules
 
-- For broad, ambiguous, or multi-output requests, use `hospital-workflow-harness` as the primary entrypoint.
+- Automatically apply `hospital-workflow-harness` to every in-scope request about non-clinical hospital operations, even when the user does not name a Skill or use a `$` command.
+- Never require non-technical users to select, remember, or type a Skill name.
+- Treat ordinary Japanese requests such as "マニュアルを作って", "会議メモを整理して", or "業務を改善したい" as sufficient invocation.
+- Select specialist Skills internally. Do not ask the user to choose a Skill unless they explicitly want to control the routing.
 - If the user names a specialist Skill directly, still apply the scope gate, artifact policy, and human-review policy before completing the task.
 - Do not create a deliverable when the request fails the non-clinical scope gate.
 - For substantive work, create an `outputs/YYYYMMDD-task-name/` workspace with `task-brief.md` and `run.json`.

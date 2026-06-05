@@ -69,7 +69,7 @@ cd hospital-workflow-codex-skills
 codex
 ```
 
-Use `$hospital-workflow-harness` as the primary entrypoint. It applies safety gates, selects the working mode and task Skill, determines file deliverables, and performs the final human-review handoff.
+No Skill name or `$` command is required. Open this repository in Codex and describe the non-clinical hospital task in ordinary language. Codex automatically applies `hospital-workflow-harness`, selects the appropriate task Skill, determines file deliverables, and performs the final human-review handoff.
 
 For user-level installation:
 

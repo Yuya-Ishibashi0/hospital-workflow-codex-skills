@@ -1,4 +1,4 @@
-# Regional Cooperation Use Cases
+# 地域連携室のユースケース一覧
 
 ## 地域連携先リスト管理フロー
 

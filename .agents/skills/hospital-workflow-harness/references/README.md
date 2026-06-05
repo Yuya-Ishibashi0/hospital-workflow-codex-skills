@@ -39,7 +39,9 @@
 
 ## 実行入口
 
-通常の利用では `$hospital-workflow-harness` を呼び出します。
+通常の利用では、Skill名を指定する必要はありません。このリポジトリをCodexで開き、病院の非診療業務について日本語で依頼すると、`hospital-workflow-harness` が自動的に適用されます。
+
+`$hospital-workflow-harness` は、動作を明示したい場合だけ使用する任意の指定です。
 
 この入口が以下を順に行います。
 

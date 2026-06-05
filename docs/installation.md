@@ -14,10 +14,9 @@ codex
 
 生成される成果物は、原則としてチャット本文ではなく `outputs/` 配下の `.docx`、`.xlsx`、`.pptx`、`.md`、`.csv` として保存します。
 
-基本の呼び出し方:
+基本の使い方です。Skill名や特別な記号は不要です。
 
 ```text
-$hospital-workflow-harness
 会議メモを整理し、議事録とアクション一覧をファイルで作成してください。
 ```
 
@@ -43,10 +42,9 @@ python3 tools/install_user_harness.py --uninstall --dry-run
 python3 tools/install_user_harness.py --uninstall
 ```
 
-導入後は次のように明示できます。
+導入後は、通常の日本語で依頼できます。
 
 ```text
-$hospital-workflow-harness
 会議メモを整理し、議事録とアクション一覧をファイルで作成してください。
 ```
 
@@ -58,7 +56,9 @@ python3 tools/harness_doctor.py
 
 plugin manifest、Skill、harness 文書、templates の不足を確認します。
 
-## 明示的に Skill を呼ぶ
+## Skillを明示したい場合
+
+通常はCodexが自動で選ぶため、この操作は不要です。動作を細かく指定したい場合だけ使用します。
 
 ```text
 Use the $admin-workflow-consultant skill to organize duplicate Excel entry and paper transfer work into a low-risk improvement proposal.

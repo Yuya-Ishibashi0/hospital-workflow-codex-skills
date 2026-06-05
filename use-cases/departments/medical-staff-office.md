@@ -1,4 +1,4 @@
-# Medical Staff Office Use Cases
+# 医局・医局事務のユースケース一覧
 
 ## 医局会議アジェンダ作成
 
