@@ -28,17 +28,25 @@
 
 ## クイックスタート
 
-### 1. このリポジトリをダウンロードする
+### 1. Codexアプリに準備を依頼する
 
-[こちらからZIPファイルをダウンロード](https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills/archive/refs/heads/main.zip)し、ダウンロードしたファイルを展開します。
+Codexアプリを起動し、チャット欄に次の文章を貼り付けてください。
 
-すでにこのフォルダを手元に用意している場合は、この手順は不要です。
+```text
+次のGitHubリポジトリをgit cloneして、Codexで利用できるように準備してください。
 
-### 2. Codexアプリでフォルダを開く
+https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills
 
-Codexアプリを起動し、展開した `hospital-workflow-codex-skills` フォルダを開きます。
+README.mdとAGENTS.mdを確認し、準備が完了したら保存先と次の操作を日本語で案内してください。
+```
 
-### 3. やりたいことを日本語で依頼する
+Codexがリポジトリの取得と確認を行います。途中でアクセス許可を求められた場合は、表示された内容を確認して許可してください。
+
+### 2. 準備されたフォルダを開く
+
+Codexから案内された `hospital-workflow-codex-skills` フォルダを、Codexアプリで開きます。
+
+### 3. やりたいことを依頼する
 
 チャット欄に、次のように入力してください。
 
@@ -62,6 +70,16 @@ $hospital-workflow-harness
 成果物は原則として `outputs` フォルダに保存されます。
 
 Codexのチャット欄には、作成したファイル、保存場所、確認が必要な点だけが短く表示されます。完成したマニュアルや表を、長いチャットからコピーし直す必要はありません。
+
+### 自分で取得する場合
+
+Gitに慣れている場合は、ターミナルから取得することもできます。
+
+```bash
+git clone https://github.com/Yuya-Ishibashi0/hospital-workflow-codex-skills.git
+```
+
+取得後、`hospital-workflow-codex-skills` フォルダをCodexアプリで開いてください。
 
 ## 依頼例
 
